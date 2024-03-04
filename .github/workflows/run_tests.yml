@@ -1,6 +1,6 @@
 name: Run tests
 on:
-    push:
+  push:
     branches:
       - test
 jobs:

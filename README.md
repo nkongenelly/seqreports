@@ -4,7 +4,7 @@ This is a Nextflow pipeline for generating sequencing reports for the SNP&amp;Se
 ## Pre-requisites
 You need to:
   - install Nextflow (e.g. using conda `conda create -n nextflow-env nextflow` or downloading from [nextflow.io](https://www.nextflow.io/)).
-  - install [Singularity (version > 2.6)](https://singularity.lbl.gov/install-linux#adding-the-mirror-and-installing).
+  - install [Apptainer](https://apptainer.org/docs/admin/latest/installation.html).
 
 Optional:
   - (currently mandatory: see known issues) Download the fastq-screen database by downloading fastq-screen from [here](https://www.bioinformatics.babraham.ac.uk/projects/fastq_screen/fastq_screen_v0.13.0.tar.gz), extract the archive and then run `fastq_screen --get_genomes`.
@@ -64,11 +64,9 @@ black .
 Assuming you have installed all pre-requisites (except the fastq screen database: test data comes with a minimal version of it), you can run tests locally by following these steps:
 
 ```
-# create virtual environment 
-virtualenv -p python3.9 venv/   
-
-# activate venv
-source venv/bin/activate
+# create a virtual env with a tool of your choice, for example pyenv
+pyenv virtualenv 3.11 seqreports
+pyenv activate seqreports
 
 # install dependencies
 pip install -r requirements-dev.txt

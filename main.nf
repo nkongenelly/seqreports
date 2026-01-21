@@ -234,7 +234,7 @@ process GET_QC_THRESHOLDS {
     path runfolder
 
     output:
-    path "qc_thresholds.yaml" optional true
+    path "qc_thresholds.yaml", optional: true
 
     script:
     if ( params.checkqc_config ){

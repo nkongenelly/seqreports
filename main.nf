@@ -130,7 +130,7 @@ workflow CHECK_RUN_QUALITY {
     main:
         if (params.demultiplexer == 'bclconvert') {
             Channel.fromPath([
-            "${params.run_folder}/${params.demultiplexer_outdir}/Reports/*.csv",
+            "${params.run_folder}/${params.demultiplexer_outdir}/Stats/*.csv",
             "${params.run_folder}/RunInfo.xml"])
             .collect().ifEmpty([])
             .set { demux_stats }
